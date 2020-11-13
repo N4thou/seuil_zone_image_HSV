@@ -13,7 +13,7 @@ out=cv2.VideoWriter('output.avi',fourcc,20.0,(320,240))
 #note: dimenssion de la vidéo: 320*240 => centre 160 120
 
 print(cap.isOpened())
-zone=[[160,220],[120,170]]#XX YY
+zone=[[160,230],[120,170]]#XX YY
 
 Hmax=0
 Hmin=360
@@ -35,7 +35,12 @@ while(cap.isOpened()):
                     Hmax=h[i][j]
                 if h[i][j]<=Hmin:
                     Hmin=h[i][j]
-                s[i][j]=50
+                #s[i][j]=50
+
+        for i in range(zone[1][0],zone[1][1]):
+            for j in range(zone[0][0],zone[0][1]):
+                h[i][j]=round((h[i][j]/(Hmax-Hmin)),0)*360
+                a=1
         hsvframe=cv2.merge((h,s,v))
 
 
