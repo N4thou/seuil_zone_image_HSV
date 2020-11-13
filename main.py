@@ -2,7 +2,7 @@ import cv2
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-os.chdir("D:/Stockage/Programation/Python_Worspace/traitement_image")
+os.chdir("D:/Stockage/Programation/Python_Worspace/seuillage_image")
 
 cap = cv2.VideoCapture("FLIR1497.mp4")
 
